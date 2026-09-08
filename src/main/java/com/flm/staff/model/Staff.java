@@ -33,7 +33,7 @@ public class Staff {
 	private String firstname;
 	
 	private String lastname;
-	
+
 	@Column(name = "phone_number")
 	private String phoneNumber;
 	
@@ -49,7 +49,7 @@ public class Staff {
 	private Specialization specialization;
 	
 	@Column(name = "date_of_joining")
-	private LocalDate doj;
+	private LocalDate dateOfJoining;
 	
 	@Column(name = "experience_in_years")
 	private String experienceInYears;
@@ -67,4 +67,23 @@ public class Staff {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "staff_address_id")
 	private StaffAddress staffAddress;
+	
+	public Staff(String firstname, String lastname, String phoneNumber, StaffType staffType, String gender, String role,
+			Specialization specialization, LocalDate dateOfJoining, String experienceInYears, Boolean canLogin,
+			Boolean isEmployeeActive, StaffDetails staffDetails, StaffAddress staffAddress) {
+		super();
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.phoneNumber = phoneNumber;
+		this.staffType = staffType;
+		this.gender = gender;
+		this.role = role;
+		this.specialization = specialization;
+		this.dateOfJoining = dateOfJoining;
+		this.experienceInYears = experienceInYears;
+		this.canLogin = canLogin;
+		this.isEmployeeActive = isEmployeeActive;
+		this.staffDetails = staffDetails;
+		this.staffAddress = staffAddress;
+	}
 }
