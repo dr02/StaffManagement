@@ -52,7 +52,7 @@ public class Staff {
 	private LocalDate dateOfJoining;
 	
 	@Column(name = "experience_in_years")
-	private String experienceInYears;
+	private Integer experienceInYears;
 	
 	@Column(name = "can_login")
 	private Boolean canLogin;
@@ -69,7 +69,7 @@ public class Staff {
 	private StaffAddress staffAddress;
 	
 	public Staff(String firstname, String lastname, String phoneNumber, StaffType staffType, String gender, String role,
-			Specialization specialization, LocalDate dateOfJoining, String experienceInYears, Boolean canLogin,
+			Specialization specialization, LocalDate dateOfJoining, Integer experienceInYears, Boolean canLogin,
 			Boolean isEmployeeActive, StaffDetails staffDetails, StaffAddress staffAddress) {
 		super();
 		this.firstname = firstname;
