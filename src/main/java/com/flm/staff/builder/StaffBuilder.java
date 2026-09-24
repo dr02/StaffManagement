@@ -7,6 +7,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.flm.staff.dto.RegisterStaffDTO;
+import com.flm.staff.dto.StaffAddressDTO;
 import com.flm.staff.model.Staff;
 import com.flm.staff.model.StaffAddress;
 import com.flm.staff.model.StaffDetails;
@@ -29,7 +30,7 @@ public class StaffBuilder {
 				.isEmployeeActive(true)
 				.canLogin(true)
 				.staffDetails(buildStaffDetailsUsingRegisterStaffDTO(registerStaffDTO))
-				.staffAddress(buildStaffAddressUsingRegisterStaffDTO(registerStaffDTO))
+				.staffAddress(buildStaffAddressUsingRegisterStaffDTO(registerStaffDTO.getStaffAddressDTO()))
 				.build();
 	}
 	
@@ -43,9 +44,9 @@ public class StaffBuilder {
 				.build();
 	}
 	
-	private static StaffAddress buildStaffAddressUsingRegisterStaffDTO(RegisterStaffDTO registerStaffDTO) {
+	private static StaffAddress buildStaffAddressUsingRegisterStaffDTO(StaffAddressDTO staffAddressDTO) {
 		StaffAddress staffAddress = new StaffAddress();
-		BeanUtils.copyProperties(registerStaffDTO, staffAddress);
+		BeanUtils.copyProperties(staffAddressDTO, staffAddress);
 		return staffAddress;
 	}
 	
