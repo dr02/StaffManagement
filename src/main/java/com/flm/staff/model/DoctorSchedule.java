@@ -33,4 +33,10 @@ public class DoctorSchedule {
 	
 	@Column(name = "unavailable_date", nullable = false)
 	private LocalDate unavailableDate;
+
+	public DoctorSchedule(Staff staff, LocalDate unavailableDate) {
+		super();
+		this.staff = staff;
+		this.unavailableDate = unavailableDate;
+	}
 }
