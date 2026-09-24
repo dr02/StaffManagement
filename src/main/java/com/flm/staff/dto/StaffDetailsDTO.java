@@ -14,16 +14,19 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class RegisterStaffDTO {
+public class StaffDetailsDTO {
+	private String staffId;
 	private String firstName;
 	private String lastName;
 	private String phoneNumber;
+	private String email;
 	private String role;
 	private String gender;
-	private String email;
 	private LocalDate dateOfJoining;
 	private int experienceInYears;
-	private StaffAddressDTO staffAddressDTO;
 	private Specialization specialization;
 	private StaffType staffType;
+	private boolean isEmployeeActive;
+	private boolean canLogin;
+	private StaffAddressDTO staffAddressDTO;
 }
